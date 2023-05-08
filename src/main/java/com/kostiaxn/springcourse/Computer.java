@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 public class Computer {
     private int id;
     private MusicPlayer musicPlayer;
+
     @Autowired
     public Computer(MusicPlayer musicPlayer) {
         this.id = 1;
