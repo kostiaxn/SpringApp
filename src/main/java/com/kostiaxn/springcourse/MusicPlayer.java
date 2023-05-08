@@ -1,10 +1,7 @@
 package com.kostiaxn.springcourse;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class MusicPlayer {
-    private List<Music> musicList = new ArrayList<>();
+    private Music music;
 
     private String name;
     private int volume;
@@ -25,13 +22,18 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    public void setMusicList(List<Music> musicList) {
-        this.musicList = musicList;
+    // IoC
+    public MusicPlayer(Music music) {
+        this.music = music;
     }
 
-    public void playMusicList() {
-        for(Music music : musicList) {
-            System.out.println("Playing: " + music.getSong());
-        }
+    public MusicPlayer() {}
+
+    public void setMusic(Music music) {
+        this.music = music;
+    }
+
+    public void playMusic() {
+        System.out.println("Playing: " + music.getSong());
     }
 }
